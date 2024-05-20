@@ -108,7 +108,7 @@ const AdminDashboard = () => {
 
   return (
     <Layout>
-      <div className="min-h-[90vh] pt-5 flex flex-col flex-wrap gap-10 text-white">
+      <div className=" bg-blue-900 min-h-[90vh] pt-5 flex flex-col flex-wrap gap-10 text-white">
         <h1 className="text-center text-3xl font-semibold text-yellow-500">
           Admin Dashboard
         </h1>
@@ -167,7 +167,7 @@ const AdminDashboard = () => {
                 <div className="flex flex-col items-center">
                   <p className="font-semibold">Total Revenue</p>
                   <h3 className="text-4xl font-bold">
-                    {allPayments?.count * 499}
+                    {allPayments?.count * 2}
                   </h3>
                 </div>
                 <GiMoneyStack className="text-green-500 text-5xl" />

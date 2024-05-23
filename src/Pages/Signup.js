@@ -111,101 +111,92 @@ const Signup = () => {
 
   return (
     <Layout>
-      <div className="flex items-center justify-center h-[100vh]">
-        <form
-          onSubmit={createNewAccount}
-          className="flex flex-col justify-center gap-3 rounded-lg p-4 text-white w-96 shadow-[0_0_10px_black]"
-        >
-          <h1 className="text-center text-2xl font-bold">Registration Page</h1>
+     <div class="registration-container flex items-center justify-center h-screen bg-gray-900">
+  <form
+    onSubmit={createNewAccount}
+    class="registration-form flex flex-col justify-center gap-3 rounded-lg p-4 text-white shadow-md max-w-md"
+  >
+    <h1 class="text-center text-2xl font-bold">Registration Page</h1>
 
-          {/* input for image file */}
-          <label className="cursor-pointer" htmlFor="image_uploads">
-            {previewImage ? (
-              <img
-                className="w-24 h-24 rounded-full m-auto"
-                src={previewImage}
-                alt="preview image"
-              />
-            ) : (
-              <BsPersonCircle className="w-24 h-24 rounded-full m-auto" />
-            )}
-          </label>
-          <input
-            onChange={getImage}
-            className="hidden"
-            type="file"
-            id="image_uploads"
-            name="image_uploads"
-            accept=".jpg, .jpeg, .png"
+    <div class="profile-picture flex justify-center items-center mb-4">
+      <label for="image_uploads" class="cursor-pointer relative">
+        {previewImage ? (
+          <img
+            class="w-24 h-24 rounded-full object-cover"
+            src={previewImage}
+            alt="preview image"
           />
+        ) : (
+          <BsPersonCircle class="w-24 h-24 rounded-full object-cover bg-gray-200" />
+        )}
+        <input
+          type="file"
+          id="image_uploads"
+          name="image_uploads"
+          accept=".jpg, .jpeg, .png"
+          class="hidden absolute top-0 left-0 w-full h-full opacity-0"
+          onChange={getImage}
+        />
+        <div class="text-xs text-center absolute bottom-2 right-2 bg-gray-900 hover:bg-gray-700 rounded-full px-2 py-1 text-white opacity-0 hover:opacity-100">
+          Upload Photo
+        </div>
+      </label>
+    </div>
 
-          {/* input for name */}
-          <div className="flex flex-col gap-1">
-            <label className="font-semibold" htmlFor="fullName">
-              Name
-            </label>
-            <input
-              required
-              type="name"
-              name="fullName"
-              id="fullName"
-              placeholder="Enter your name"
-              className="bg-transparent px-2 py-1 border"
-              value={signupData.fullName}
-              onChange={handleUserInput}
-            />
-          </div>
+    <div class="flex flex-col gap-2">
+      <label for="fullName" class="font-semibold text-base">Name</label>
+      <input
+        required
+        type="text"
+        name="fullName"
+        id="fullName"
+        placeholder="Enter your name"
+        class="bg-transparent px-3 py-2 rounded-md border focus:outline-none focus:ring-1 focus:ring-blue-500"
+        value={signupData.fullName}
+        onChange={handleUserInput}
+      />
 
-          {/* input for email */}
-          <div className="flex flex-col gap-1">
-            <label className="font-semibold" htmlFor="email">
-              Email
-            </label>
-            <input
-              required
-              type="email"
-              name="email"
-              id="email"
-              placeholder="Enter your email"
-              className="bg-transparent px-2 py-1 border"
-              value={signupData.email}
-              onChange={handleUserInput}
-            />
-          </div>
+      <label for="email" class="font-semibold text-base">Email</label>
+      <input
+        required
+        type="email"
+        name="email"
+        id="email"
+        placeholder="Enter your email"
+        class="bg-transparent px-3 py-2 rounded-md border focus:outline-none focus:ring-1 focus:ring-blue-500"
+        value={signupData.email}
+        onChange={handleUserInput}
+      />
 
-          {/* input for password */}
-          <div className="flex flex-col gap-1">
-            <label className="font-semibold" htmlFor="password">
-              Password
-            </label>
-            <input
-              required
-              type="password"
-              name="password"
-              id="password"
-              placeholder="Enter your password"
-              className="bg-transparent px-2 py-1 border"
-              value={signupData.password}
-              onChange={handleUserInput}
-            />
-          </div>
+      <label for="password" class="font-semibold text-base">Password</label>
+      <input
+        required
+        type="password"
+        name="password"
+        id="password"
+        placeholder="Enter your password"
+        class="bg-transparent px-3 py-2 rounded-md border focus:outline-none focus:ring-1 focus:ring-blue-500"
+        value={signupData.password}
+        onChange={handleUserInput}
+      />
+    </div>
 
-          {/* registration button */}
-          <button
-            className="w-full bg-yellow-600 hover:bg-yellow-500 transition-all ease-in-out duration-300 rounded-sm py-2 font-semibold text-lg cursor-pointer"
-            type="submit"
-          >
-            Create Account
-          </button>
+    <button
+      type="submit"
+      class="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold text-lg py-2 rounded-md transition duration-300 ease-in-out"
+    >
+      Create Account
+    </button>
 
-          <p className="text-center">
-            Already have an account ?{" "}
-            <Link to={"/login"} className="link text-accent cursor-pointer">
-              Login
-            </Link>
-          </p>
-        </form>
-      </div>
+    <p class="text-center text-sm mt-4">
+      Already have an account?
+      <Link to={"/login"} class="text-blue-600 hover:underline">
+        Login
+      </Link>
+    </p>
+  </form>
+</div>
+
     </Layout>
   );
 };

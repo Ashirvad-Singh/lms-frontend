@@ -17,7 +17,7 @@ const Courses = () => {
   return (
     <Layout>
       {/* courses container for displaying the cards */}
-      <div className="min-h-[90vh] pt-12 pl-20 flex flex-col flex-wrap gap-10 text-white bg-blue-900">
+      <div className="min-h-[90vh] pt-12 pl-20 flex flex-col flex-wrap gap-10 text-white bg-gray-900">
         <h1 className="text-center text-3xl font-semibold">
           Explore the courses made by{" "}
           <span className="font-bold text-yellow-500">Industry Experts</span>

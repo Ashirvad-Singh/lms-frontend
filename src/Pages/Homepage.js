@@ -1,20 +1,43 @@
 import React from "react";
 import Layout from "../Layout/Layout";
-import homePageMainImage from "../Assets/Images/_ (1).gif";
+import homePageMainImage from "../Assets/Images/homePageMainImage.png";
 import { Link } from "react-router-dom";
-
+import { TypeAnimation } from 'react-type-animation';
 const Homepage = () => {
+
   return (
     <Layout>
-      <div className="pt-10 text-white bg-blue-900 flex items-center justify-center   h-auto lg:h-[90vh] flex-col lg:flex-row">
+      <div className="pt-10 text-white bg-gray-900 flex items-center justify-center   h-auto lg:h-[90vh] flex-col lg:flex-row">
         {/* for platform details */}
         <div className="w-full mx-16 lg:w-1/2 space-y-6 text-center lg:text-left">
-          <h1 className="text-5xl font-semibold">
-            Find out the best{" "}
-            <span className="text-yellow-500 font-bold">Online Courses</span>
+          <h1 className="text-5xl font-semibold leading-20">
+           Want to become{" "}
+           <br></br>
+           <br></br>
+            <span className="text-yellow-500 font-bold">
+            <TypeAnimation
+      sequence={[
+        // Same substring at the start will only be typed out once, initially
+        'Full Stack Developer',
+        1000, // wait 1s before replacing "Mice" with "Hamsters"
+        'Front End Developer',
+        1000,
+        'Back End Developer',
+        1000,
+        'Web Designer',
+        1000
+      ]}
+      wrapper="span"
+      speed={50}
+    
+      repeat={Infinity}
+    />
+            </span>
           </h1>
-          <p className="text-xl text-gray-200">
+          <br></br>
+          <p className="text-xl text-gray-200 leading-relaxed">
             We have a large library of courses taught by highly skilled and
+            qualified faculties at a very affordable cost.large library of courses taught by highly skilled and
             qualified faculties at a very affordable cost.
           </p>
 
